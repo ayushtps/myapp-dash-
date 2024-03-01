@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-dash {
+    display: flex;
+}
+
+.dash-content {
+    width: 100%;
+    margin-left: 240px;
+    padding: 10px;
+    width: 100%;
+    padding: 20px 20px 20px 0;
+    background-color: var(--main-color);
+}
+
+.dash-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--second-color);
+    border-radius: 20px;
+    padding: 20px;
+}
+@media screen and (max-width: 768px) {
+    .dash-content {
+        width: 100%;
+        margin-left: 0px;
+        position: relative;
+        margin-top: 110.88px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.right-btn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 20px;
+}
+.add-user-btn button{
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: var(--second-color);
+    border: 2px solid var(--third-dark-color);
+    background-color: var(--third-dark-color);
+}
+.table-sec{
+    border-radius: 7px;
+    box-shadow: 0 0 7px 0 #0000001a;
+    min-height: 350px;
+}
+:where(.css-dev-only-do-not-override-1k979oh).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-1k979oh).ant-table-wrapper .ant-table-thead >tr>td {  
+    background: var(--main-color) !important;
+}
+
+@media screen and (max-width:767px) {
+    .table-sec{
+        width: 100%;
+        overflow-x: scroll;
+    }
+}

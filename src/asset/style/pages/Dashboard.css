@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.dash-chart-container{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+}
+.dash-header{
+    padding-bottom: 15px;
+}
+.dashboard-page{
+    display: flex;
+    gap:20px;
+}
+.left-page {
+    width: 75%;
+}
+.box-section {
+   display: grid;
+   width: 100%;
+   gap: 24px;
+   grid-gap: 24px;
+   grid-template-columns: repeat(4,minmax(0,1fr));
+}
+.boxes{
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.box-section .first{
+    background-color: #ffecd9;
+    border: 1px solid #ffc388;
+}
+.box-section .second{
+    background-color: #dbf2f2;
+    border: 1px solid #91d9d9;
+}
+.box-section .third{
+    background-color: #d7ecfb;
+    border: 1px solid #84c6f3;
+}
+.box-section .fourth{
+    background-color: #ebe0ff;
+    border: 1px solid #c5a8ff;
+}
+
+.content-view p{
+    font-size: 15px;
+    margin: 0;
+    padding: 2px;
+    color: var(--text-color);
+}
+.content-view h3{
+    color: gray;
+    font-size: 22px;
+    font-weight: 200;
+    padding: 2px;
+}
+.right-page {
+    width: 25%;
+}
+.right-page h3{
+    padding: 2px 0 12px;
+    border-bottom: 1px solid gray;
+}
+.reacent-main{
+    box-shadow: 0 0 7px 0 #0000001a;
+    margin-bottom: 30px;
+    padding: 18px;
+}
+.recent-activity-container::-webkit-scrollbar {
+    display: none;
+}
+.recent-activity-container{
+    height: 380px;
+    margin-top: 15px;
+    overflow: scroll;   
+}
+.recent-activity-container1::-webkit-scrollbar {
+    display: none;
+}
+.recent-activity-container1{
+    height: 200px;
+    margin-top: 15px;
+    overflow: scroll;   
+}
+.activity-view{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    padding: 7px;
+    transition: all 0.3s ease-in-out;
+}
+.activity-view:hover{
+    border-radius: 5px;
+    background-color: #f4eadf;
+}
+.inner{
+    display: flex;
+    gap: 5px;
+}
+.inner p{
+    font-weight: 500;
+}
+.currentdate1{
+    color: gray;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 29px;
+}
+
+@media screen and (max-width:768px) {
+    .dashboard-page{
+        display: flex;
+        flex-direction: column;
+    }
+    .left-page{
+        width: 100%;
+    }
+    .box-section{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+    .right-page {
+        width: 100%;
+    }
+}

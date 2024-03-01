@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.graph-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    width: 100%;
+    gap: 20px;
+}
+.chart-section{
+    width: 49%;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 0 #0000001a;
+    background-color: var(--basic-color);
+    min-height: 200px;
+}
+.chart-content{
+    padding: 15px;
+}
+.pie-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie{
+    width: 300px !important;
+    height: 300px !important;
+}
+.bar{
+    width: 500px !important;
+    height: 300px !important;
+}
+.line{
+    width: 1000px !important;
+    height: 300px !important;
+}
+.bar-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-chart{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 0 #0000001a;
+    background-color: var(--basic-color);
+    min-height: 200px;
+    margin-top: 30px;
+    padding: 18px;
+}
+.line-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:767px) {
+    .graph-section{
+        flex-direction: column;
+    }
+    .chart-section{
+        width: 100%;
+    }
+    .bar{
+        width: auto !important;
+        height: auto !important;
+    }
+    .line{
+        width: 500px !important;
+        height: auto !important;
+    }
+}
