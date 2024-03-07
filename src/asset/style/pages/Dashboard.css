@@ -105,8 +105,10 @@
     display: flex;
     gap: 5px;
 }
-.inner p{
-    font-weight: 500;
+.inner p {
+    font-size: 14px;
+    font-weight: 600;
+
 }
 .currentdate1{
     color: gray;

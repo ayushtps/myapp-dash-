@@ -3,9 +3,21 @@ import { MainDashHOC } from '../component/MainDashHOC'
 import '../asset/style/pages/Dashboard.css'
 import Header from '../layout/Header'
 import Charts from '../component/Charts'
+import { useDispatch, useSelector } from 'react-redux'
+import { ResentUser } from '../redux/slices/ResentActivitySlice'
+import moment from 'moment'
 
 
 function Dashboard() {
+
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.recent.data)
+  const state1 = useSelector(state => state?.Users.data)
+  const lastUpdate = state?.slice(-10).reverse();
+  useEffect(() => {
+    dispatch(ResentUser())
+  }, [])
+
 
   return (
     <>
@@ -54,54 +66,45 @@ function Dashboard() {
               </div>
             </div>
             <div className="graphs">
-              <Charts/>
+              <Charts />
             </div>
           </div>
           <div className="right-page">
             <div className="reacent-main">
               <h3 className='text-left fs-5'>Recent Activities</h3>
               <div className="recent-activity-container">
-                <div className="activity-view">
-                  <div className="inner">
-                    <div className="rounded">
-                      <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
+                {
+                  lastUpdate?.map((x, i) => {
+                    return <div className="activity-view" key={i}>
+                      <div className="inner">
+                        <div className="rounded">
+                          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
+                        </div>
+                        <p>{x.title}</p>
+                      </div>
+                      <p className='currentdate1'>{new Date(x.ts * 1000).toLocaleString()}</p>
                     </div>
-                    <p>ayush paghadal is Log in</p>
-                  </div>
-                  <p className='currentdate1'>27-02-2024, 06:32 PM</p>
-                </div>
-                <div className="activity-view">
-                  <div className="inner">
-                    <div className="rounded">
-                      <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
-                    </div>
-                    <p>ayush paghadal is Log in</p>
-                  </div>
-                  <p className='currentdate1'>27-02-2024, 06:32 PM</p>
-                </div>
-                <div className="activity-view">
-                  <div className="inner">
-                    <div className="rounded">
-                      <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
-                    </div>
-                    <p>ayush paghadal is Log in</p>
-                  </div>
-                  <p className='currentdate1'>27-02-2024, 06:32 PM</p>
-                </div>
+                  })
+                }
               </div>
             </div>
             <div className="reacent-main">
               <h3 className='text-left fs-5'>New User</h3>
               <div className="recent-activity-container1">
-                <div className="activity-view">
-                  <div className="inner">
-                    <div className="rounded">
-                      <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
+                {
+                  state1?.map((x, i) => {
+                    console.log(x);
+                    return <div className="activity-view" key={i}>
+                      <div className="inner">
+                        <div className="rounded">
+                          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#000" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style={{ color: "rgb(0, 0, 0);" }}><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor"></path></svg>
+                        </div>
+                        <p>{x.email}</p>
+                      </div>
+                      <p className='currentdate1'>{new Date(x.created_at * 1000).toLocaleString()}</p>
                     </div>
-                    <p>ayush paghadal is Log in</p>
-                  </div>
-                  <p className='currentdate1'>27-02-2024, 06:32 PM</p>
-                </div>
+                  })
+                }
               </div>
             </div>
           </div>
