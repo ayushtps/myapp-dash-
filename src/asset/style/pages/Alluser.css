@@ -20,6 +20,33 @@
     box-shadow: 0 0 7px 0 #0000001a;
     min-height: 350px;
 }
+.modal-header span{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer-form-btn{
+    text-align: center;
+}
+.footer-form-btn button{
+    margin: 0 10px;
+    height: 40px;
+    width: 120px;
+    background-color: var(--third-dark-color);
+    color: var(--second-color);
+}
+.handalbtn{
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+:where(.css-dev-only-do-not-override-1k979oh).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+    background: var(--third-dark-color);
+    opacity: 0.8;
+    color: var(--text-color);
+}
 :where(.css-dev-only-do-not-override-1k979oh).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-1k979oh).ant-table-wrapper .ant-table-thead >tr>td {  
     background: var(--main-color) !important;
 }

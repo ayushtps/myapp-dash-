@@ -11,9 +11,7 @@ function Header() {
 
     const currenttimeDate = () => {
         var currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }).split(',')
-        console.log(currentDate);
         let fainal = `${currentDate[0]},${currentDate[1]}${currentDate[2]}`
-        console.log(fainal);
         setdate(fainal)
         // let day=currentDate[1]
         // let month=currentDate[2]
