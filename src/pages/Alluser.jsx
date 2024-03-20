@@ -248,10 +248,10 @@ function Alluser() {
                 <Input placeholder="Mobile Number" name='mobileNumber' value={registerForm.mobileNumber} onChange={handleChange} />
               </Form.Item>
               <Form.Item>
-                <Input placeholder="Enter Email" name='email' value={registerForm.email} onChange={handleChange} />
+                <Input placeholder="Enter Email" name='email' type='password' value={registerForm.email} onChange={handleChange} />
               </Form.Item>
               <Form.Item>
-                <Input placeholder="Enter Password" name='password' value={registerForm.password} onChange={handleChange} />
+                <Input placeholder="Enter Password" name='password' type='password' value={registerForm.password} onChange={handleChange} />
               </Form.Item>
               <Form.Item>
                 <Input placeholder="Confirm Password" name='confirmPassword' value={registerForm.confirmPassword} onChange={handleChange} />
