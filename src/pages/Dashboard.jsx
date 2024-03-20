@@ -83,7 +83,7 @@ function Dashboard() {
                         <p>{x.title}</p>
                       </div>
                       <p className='currentdate1'>{new Date(x.ts * 1000).toLocaleString()}</p>
-                    </div>
+                    </div>  
                   })
                 }
               </div>
@@ -93,7 +93,6 @@ function Dashboard() {
               <div className="recent-activity-container1">
                 {
                   state1?.map((x, i) => {
-                    console.log(x);
                     return <div className="activity-view" key={i}>
                       <div className="inner">
                         <div className="rounded">
