@@ -21,6 +21,7 @@ function Alluser() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state?.Users.data);
 
+
   const [isModalOpen, setisModalOpen] = useState(false);
   const [isEditOpen, setisEditOpen] = useState(false);
   const [isShowOpen, setisShowOpen] = useState(false);
@@ -265,8 +266,8 @@ function Alluser() {
             locale={{ emptyText: "No Data found" }}
             pagination={{
               current: currentPage,
-              pageSize: 10,
-              total: 20,
+              pageSize: 5,
+              total: 40,
               onChange: handlePageChange,
             }}
             onRow={(record) => {
