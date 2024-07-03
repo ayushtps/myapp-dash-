@@ -4,6 +4,7 @@ import { routes } from './Constatns'
 import Dashboard from './pages/Dashboard'
 import Alluser from './pages/Alluser'
 import Accounts from './pages/Accounts'
+import UserDetails from './component/UserDetails'
 
 function Router() {
     return (
@@ -12,6 +13,7 @@ function Router() {
                 <Route path={routes.root} element={<Navigate to={routes.Dashboard}/>}/>
                 <Route path={routes.Dashboard} element={<Dashboard/>}/>
                 <Route path={routes.Users} element={<Alluser/>}/>
+                <Route path={routes.UserDetails} element={<UserDetails/>}/>
                 <Route path={routes.Accounts} element={<Accounts/>}/>
                 <Route path='*' element={<Dashboard/>}/>
             </Routes>
