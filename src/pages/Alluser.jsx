@@ -1,8 +1,9 @@
+import "../asset/style/component/AllUser.scss";
 import React, { useEffect, useState } from "react";
 import { MainDashHOC } from "../component/MainDashHOC";
 import Header from "../layout/Header";
 import "../asset/style/pages/Alluser.css";
-import { Button, Form, Input, Modal, Table } from "antd";
+import { Button, Form, Input, Modal, Pagination, Table } from "antd";
 import { Space, Tooltip } from "antd";
 import moment from "moment/moment";
 import { AiFillEdit } from "react-icons/ai";
@@ -20,7 +21,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 function Alluser() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state?.Users.data);
-
 
   const [isModalOpen, setisModalOpen] = useState(false);
   const [isEditOpen, setisEditOpen] = useState(false);
@@ -264,6 +264,7 @@ function Alluser() {
             columns={columns}
             dataSource={data}
             locale={{ emptyText: "No Data found" }}
+            // pagination={false}
             pagination={{
               current: currentPage,
               pageSize: 5,
@@ -278,6 +279,13 @@ function Alluser() {
               };
             }}
           />
+          {/* <Pagination
+            defaultCurrent={1}
+            current={currentPage}
+            pageSize={5}
+            total={5}
+            onChange={(value) => handlePageChange(value)}
+          /> */}
         </div>
         <Modal
           open={isModalOpen}
